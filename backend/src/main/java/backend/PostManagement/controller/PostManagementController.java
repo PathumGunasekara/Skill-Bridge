@@ -258,27 +258,27 @@ public ResponseEntity<PostManagementModel> addComment(@PathVariable String postI
             })
             .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 }
-   
 
-    @PutMapping("/{postId}/comment/{commentId}")
-    public ResponseEntity<PostManagementModel> updateComment(
-            @PathVariable String postId,
-            @PathVariable String commentId,
-            @RequestBody Map<String, String> request) {
-        String userID = request.get("userID");
-        String content = request.get("content");
+// update comment
+@PutMapping("/{postId}/comment/{commentId}")
+public ResponseEntity<PostManagementModel> updateComment(
+        @PathVariable String postId,
+        @PathVariable String commentId,
+        @RequestBody Map<String, String> request) {
+    String userID = request.get("userID");
+    String content = request.get("content");
 
-        return postRepository.findById(postId)
-                .map(post -> {
-                    post.getComments().stream()
-                            .filter(comment -> comment.getId().equals(commentId) && comment.getUserID().equals(userID))
-                            .findFirst()
-                            .ifPresent(comment -> comment.setContent(content));
-                    postRepository.save(post);
-                    return ResponseEntity.ok(post);
-                })
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
-    }
+    return postRepository.findById(postId)
+            .map(post -> {
+                post.getComments().stream()
+                        .filter(comment -> comment.getId().equals(commentId) && comment.getUserID().equals(userID))
+                        .findFirst()
+                        .ifPresent(comment -> comment.setContent(content));
+                postRepository.save(post);
+                return ResponseEntity.ok(post);
+            })
+            .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+}
 //create a method of delete comment
     @DeleteMapping("/{postId}/comment/{commentId}")
     public ResponseEntity<PostManagementModel> deleteComment(
