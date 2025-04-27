@@ -201,7 +201,7 @@ public class PostManagementController {
         postRepository.save(post);
         return ResponseEntity.ok("Media file deleted successfully!");
     }
-
+//create a methodof like post
     @PutMapping("/{postId}/like")
     public ResponseEntity<PostManagementModel> likePost(@PathVariable String postId, @RequestParam String userID) {
         return postRepository.findById(postId)
