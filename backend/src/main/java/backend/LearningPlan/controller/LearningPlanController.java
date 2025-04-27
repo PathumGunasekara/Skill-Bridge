@@ -68,7 +68,6 @@ public class LearningPlanController {
             throw new RuntimeException("Failed to upload image: " + e.getMessage());
         }
     }
-    //commits
 
     @GetMapping("/learningPlan")
     List<LearningPlanModel> getAll() {
