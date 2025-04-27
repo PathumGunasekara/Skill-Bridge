@@ -80,8 +80,8 @@ public class PostManagementModel {
         this.likes = likes;
     }
 
-   //comment model
-   public List<Comment> getComments() {
+   //create comment model
+    public List<Comment> getComments() {
     return comments;
 }
 
