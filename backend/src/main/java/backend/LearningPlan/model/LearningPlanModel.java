@@ -13,8 +13,9 @@ import java.util.Map;
 public class LearningPlanModel {
     @Id
     @GeneratedValue
-    private String id;
+    private String id; // use postID
     private String title;
+   // private String description;
     private String description;
     private String contentURL;
     private List<String> tags;
@@ -29,7 +30,7 @@ public class LearningPlanModel {
 
     public LearningPlanModel() {
     }
-
+//public LearningPlanModel(String id, String title, String description, String contentURL, List<String> tags, String postOwnerID, String imageUrl) {
     public LearningPlanModel(String id, String title, String description, String contentURL, List<String> tags, String postOwnerID, String imageUrl) {
         this.id = id;
         this.title = title;
@@ -123,6 +124,7 @@ public class LearningPlanModel {
     public String getStartDate() {
         return startDate;
     }
+
 
     public void setStartDate(String startDate) {
         this.startDate = startDate;
