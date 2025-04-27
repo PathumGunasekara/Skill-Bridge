@@ -71,7 +71,7 @@ public class PostManagementModel {
     public void setMedia(List<String> media) {
         this.media = media;
     }
-
+//like model
     public Map<String, Boolean> getLikes() {
         return likes;
     }
