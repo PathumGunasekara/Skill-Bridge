@@ -3,6 +3,8 @@ package backend.Achievements.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+//import org.springframework.data.annotation.Id;  // Importing Id for MongoDB
+//import org.springframework.data.annotation.Id; // Importing Id for MongoDB
 
 @Document(collection = "Achievements")
 public class AchievementsModel {
@@ -21,6 +23,8 @@ public class AchievementsModel {
     }
 
     public AchievementsModel(String id, String postOwnerID, String postOwnerName, String title, String description, String date, String category,String imageUrl) {
+    // public AchievementsModel(String id, String ID, String Name, String title, String description, String date, String category,String imageUrl) {  // Constructor with all fields
+    
         this.id = id;
         this.postOwnerID = postOwnerID;
         this.postOwnerName = postOwnerName;
