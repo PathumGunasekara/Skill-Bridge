@@ -227,11 +227,14 @@ public class PostManagementController {
 
     @PostMapping("/{postId}/comment")
     public ResponseEntity<PostManagementModel> addComment(@PathVariable String postId, @RequestBody Map<String, String> request) {
+        //public Entity<PostManagementModel> addComment(@PathVariable String postId, @RequestBody Map<String, String> request) {
         String userID = request.get("userID");
         String content = request.get("content");
 
         return postRepository.findById(postId)
                 .map(post -> {
+
+
                     Comment comment = new Comment();
                     comment.setId(UUID.randomUUID().toString());
                     comment.setUserID(userID);
@@ -256,7 +259,9 @@ public class PostManagementController {
 
                     return ResponseEntity.ok(post);
                 })
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build()); //correct responseEntity
+
+                //.orElse(Entity.status(HttpStatus.NOT_FOUND).build());
     }
 
     @PutMapping("/{postId}/comment/{commentId}")
