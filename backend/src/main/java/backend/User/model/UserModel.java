@@ -3,6 +3,7 @@ package backend.User.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+//import org.springframework.mongodb.core.mapping.Document;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +15,8 @@ public class UserModel {
     private String id;
     private String fullname;
     private String email;
-    private String password;
+    private String password;//correct one
+    //private String pass;
     private String phone;
     private String profilePicturePath; // New field for profile picture path
     private String googleProfileImage; // Add this field
@@ -62,7 +64,8 @@ public class UserModel {
         return password;
     }
 
-    public void setPassword(String password) {
+    //public void setPassword(String pass)
+    public void setPassword(String password) { //correct one
         this.password = password;
     }
 
