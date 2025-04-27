@@ -80,13 +80,14 @@ public class PostManagementModel {
         this.likes = likes;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
+   //comment model
+   public List<Comment> getComments() {
+    return comments;
+}
 
     public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
+    this.comments = comments;
+}
 
     public String getCategory() {
         return category;
