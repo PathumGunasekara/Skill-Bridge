@@ -83,7 +83,15 @@ public class PostManagementController {
                 })
                 .collect(Collectors.toList());
 
-        PostManagementModel post = new PostManagementModel();
+       // PostManagementModel post = new PostManagementModel();
+        //post.setUserID(userID);
+        
+        //post.setDescription(description);
+        //post.setCategory(category); // Set category
+        //post.setMedia(mediaUrls);
+
+
+        PostManagementModel post = new PostManagementModel();  //new one 
         post.setUserID(userID);
         post.setTitle(title);
         post.setDescription(description);

@@ -61,7 +61,10 @@ public class LearningPlanController {
         try {
             String extension = file.getOriginalFilename()
                     .substring(file.getOriginalFilename().lastIndexOf("."));
-            String filename = UUID.randomUUID() + extension;
+            
+             String filename = UUID.randomUUID() + extension;
+           // System.out.println("Received file: " + file.getOriginalFilename()); // Debugging line
+           // System.out.println("Received file: " + filename); // Debugging line
             Files.copy(file.getInputStream(), this.root.resolve(filename));
             return filename;
         } catch (Exception e) {
