@@ -32,7 +32,7 @@ public class AchievementsController {
         return achievementsRepository.save(newAchievementsModel);
     }
 
-    @PostMapping("/achievements/upload")
+    @PostMapping("/achievements/upload") // Upload image
     public String uploadImage(@RequestParam("file") MultipartFile file) {
         try {
             String extension = file.getOriginalFilename()
@@ -45,7 +45,7 @@ public class AchievementsController {
         }
     }
 
-    @GetMapping("/achievements")
+    @GetMapping("/achievements") // Get all achievements
     List<AchievementsModel> getAll() {
         return achievementsRepository.findAll();
     }
@@ -56,7 +56,7 @@ public class AchievementsController {
                 .orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    @PutMapping("/achievements/{id}")
+    @PutMapping("/achievements/{id}") // Update achievements
     AchievementsModel update(@RequestBody AchievementsModel newAchievementsModel, @PathVariable String id) {
         return achievementsRepository.findById(id)
                 .map(achievementsModel -> {
@@ -71,7 +71,7 @@ public class AchievementsController {
                 }).orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    @DeleteMapping("/achievements/{id}")
+    @DeleteMapping("/achievements/{id}")  // Delete achievements
     public void delete(@PathVariable String id) {
         achievementsRepository.deleteById(id);
     }
