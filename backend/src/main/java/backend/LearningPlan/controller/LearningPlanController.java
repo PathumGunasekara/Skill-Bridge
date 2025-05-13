@@ -37,7 +37,7 @@ public class LearningPlanController {
     private NotificationRepository notificationRepository;
 
     //Insert
-    @PostMapping("/learningPlan")
+    @PostMapping("/learningPlan") // Insert new learning plan
     public LearningPlanModel newLearningSystemModel(@RequestBody LearningPlanModel newLearningPlanModel) {
         System.out.println("Received data: " + newLearningPlanModel); // Debugging line
         if (newLearningPlanModel.getPostOwnerID() == null || newLearningPlanModel.getPostOwnerID().isEmpty()) {
@@ -56,7 +56,7 @@ public class LearningPlanController {
         return learningPlanRepository.save(newLearningPlanModel); 
     }
 
-    @PostMapping("/learningPlan/planUpload")
+    @PostMapping("/learningPlan/planUpload") // Upload image
     public String uploadImage(@RequestParam("file") MultipartFile file) {
         try {
             String extension = file.getOriginalFilename()
@@ -72,7 +72,7 @@ public class LearningPlanController {
         }
     }
 
-    @GetMapping("/learningPlan")
+    @GetMapping("/learningPlan")  // get all
     List<LearningPlanModel> getAll() {
         List<LearningPlanModel> posts = learningPlanRepository.findAll();
         posts.forEach(post -> {
@@ -86,7 +86,7 @@ public class LearningPlanController {
         return posts;
     }
 
-    @GetMapping("/learningPlan/{id}")
+    @GetMapping("/learningPlan/{id}")   // get by id
     LearningPlanModel getById(@PathVariable String id) {
         LearningPlanModel post = learningPlanRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(id));
@@ -99,7 +99,7 @@ public class LearningPlanController {
         return post;
     }
 
-    @PutMapping("/learningPlan/{id}")
+    @PutMapping("/learningPlan/{id}")   // update
     LearningPlanModel update(@RequestBody LearningPlanModel newLearningPlanModel, @PathVariable String id) {
         return learningPlanRepository.findById(id)
                 .map(learningPlanModel -> {
@@ -126,7 +126,7 @@ public class LearningPlanController {
                 }).orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    @DeleteMapping("/learningPlan/{id}")
+    @DeleteMapping("/learningPlan/{id}")   // delete 
     public void delete(@PathVariable String id) {
         learningPlanRepository.deleteById(id);
     }

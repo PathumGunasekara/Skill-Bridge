@@ -20,8 +20,14 @@ function AddLearningPlan() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showContentURLInput, setShowContentURLInput] = useState(false);
   const [showImageUploadInput, setShowImageUploadInput] = useState(false);
-  const [templateID, setTemplateID] = useState(null);
-  const [startDate, setStartDate] = useState('');
+  //const [templateID, TemplateID] = State(null);
+ // const [startDate, StartDate] = State('');
+  //const [endDate, EndDate] = State('');
+ // const [category, Category] = State('');
+
+  const [templateID, setTemplateID] = useState(null); //new path
+  const [startDate, setStartDate] = useState(''); //new path
+  //const [startDate, setStartDate] = useState(''); //new path
   const [endDate, setEndDate] = useState('');
   const [category, setCategory] = useState('');
 
