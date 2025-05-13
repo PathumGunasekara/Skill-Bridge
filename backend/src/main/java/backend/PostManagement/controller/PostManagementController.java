@@ -29,7 +29,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/posts")  // creat
 public class PostManagementController {
     @Autowired
     private PostManagementRepository postRepository;
@@ -44,7 +44,7 @@ public class PostManagementController {
     private String uploadDir;
 
     @PostMapping
-    public ResponseEntity<?> createPost(
+    public ResponseEntity<?> createPost( 
             @RequestParam String userID,
             @RequestParam String title,
             @RequestParam String description,
@@ -144,7 +144,7 @@ public class PostManagementController {
     }
 
     @PutMapping("/{postId}")
-    public ResponseEntity<?> updatePost(
+    public ResponseEntity<?> updatePost(     //update post method
             @PathVariable String postId,
             @RequestParam String title,
             @RequestParam String description,
@@ -188,7 +188,7 @@ public class PostManagementController {
         return ResponseEntity.ok("Post updated successfully!");
     }
 
-    @DeleteMapping("/{postId}/media")
+    @DeleteMapping("/{postId}/media")      //delete media method
     public ResponseEntity<?> deleteMedia(@PathVariable String postId, @RequestBody Map<String, String> request) {
         String mediaUrl = request.get("mediaUrl");
 
