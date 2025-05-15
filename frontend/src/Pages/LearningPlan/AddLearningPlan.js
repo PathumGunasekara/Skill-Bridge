@@ -129,6 +129,11 @@ function AddLearningPlan() {
         const videoId = new URL(url).searchParams.get('v');
         return `https://www.youtube.com/embed/${videoId}`;
       }
+   //   if (url.include('youtu.be/')) {
+     //   const videoid = url.split('youtu.be/')[1];
+     //   return `https://www.youtube.com/embed/${videoId}`;
+   //   }
+
       if (url.includes('youtu.be/')) {
         const videoId = url.split('youtu.be/')[1];
         return `https://www.youtube.com/embed/${videoId}`;
@@ -378,7 +383,7 @@ function AddLearningPlan() {
                 </div>
               )}
 
-              {imagePreview && (
+              {imagePreview && (                           //gives preview of image
                 <div className="image-preview">
                   <img src={imagePreview} alt="Preview" />
                 </div>
