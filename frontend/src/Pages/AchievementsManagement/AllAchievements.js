@@ -131,7 +131,7 @@ function AllAchievements() {
                           <div className='media-preview'>
                             <img 
                               src={`http://localhost:8080/achievements/images/${achievement.imageUrl}`} 
-                              //src={`http://localhost:3000/achievements/images/${achievement.imageUrl}`} 
+                              
                               alt="Achievement" 
                             />
                           </div>
