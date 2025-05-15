@@ -88,7 +88,8 @@ function AddLearningPlan() {
       if (image) {
         const formData = new FormData();
         formData.append('file', image);
-        const uploadResponse = await axios.post('http://localhost:8080/learningPlan/planUpload', formData, {
+        const uploadResponse = await axios.post('http://localhost:8080/learningPlan/planUpload', formData, { //new path
+          //const uploadResponse = await axios.post('http://localhost:3000/learningPlan/planUpload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -112,7 +113,8 @@ function AddLearningPlan() {
       };
 
       // Submit the post data
-      await axios.post('http://localhost:8080/learningPlan', newPost);
+      await axios.post('http://localhost:8080/learningPlan', newPost); //new path
+      // await axios.post('http://localhost:3000/learningPlan', newPost);
       alert('Post added successfully!');
       navigate('/allLearningPlan');
     } catch (error) {
@@ -129,6 +131,11 @@ function AddLearningPlan() {
         const videoId = new URL(url).searchParams.get('v');
         return `https://www.youtube.com/embed/${videoId}`;
       }
+   //   if (url.include('youtu.be/')) {
+     //   const videoid = url.split('youtu.be/')[1];
+     //   return `https://www.youtube.com/embed/${videoId}`;
+   //   }
+
       if (url.includes('youtu.be/')) {
         const videoId = url.split('youtu.be/')[1];
         return `https://www.youtube.com/embed/${videoId}`;
@@ -378,7 +385,7 @@ function AddLearningPlan() {
                 </div>
               )}
 
-              {imagePreview && (
+              {imagePreview && (                           //gives preview of image
                 <div className="image-preview">
                   <img src={imagePreview} alt="Preview" />
                 </div>
