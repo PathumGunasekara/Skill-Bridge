@@ -53,7 +53,6 @@ function AddAchievements() {
       imageUrl = await uploadResponse.text();
     }
 
-   
      const response = await fetch('http://localhost:8080/achievements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -152,7 +151,6 @@ function AddAchievements() {
               className="dark-input"
               style={{ colorScheme: 'dark' }}
             />
-            
             <button type="submit" className="submit-button">
               Add Achievement
             </button>
