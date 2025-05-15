@@ -17,6 +17,7 @@ function AllLearningPlan() {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('http://localhost:8080/learningPlan');
+        //const response = await axios.get('http://localhost:3000/learningPlan');
         setPosts(response.data);
         setFilteredPosts(response.data); // Initially show all posts
       } catch (error) {
