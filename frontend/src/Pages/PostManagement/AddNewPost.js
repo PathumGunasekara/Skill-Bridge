@@ -118,6 +118,7 @@ function AddNewPost() {
               rows={3}
               className="dark-input"
             />
+
             <select
               value={categories}
               onChange={(e) => setCategories(e.target.value)}
