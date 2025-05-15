@@ -53,7 +53,8 @@ function AddAchievements() {
       imageUrl = await uploadResponse.text();
     }
 
-    const response = await fetch('http://localhost:8080/achievements', {
+   
+     const response = await fetch('http://localhost:8080/achievements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...formData, imageUrl }),
@@ -67,7 +68,7 @@ function AddAchievements() {
   };
 
   return (
-    <div className="dark-container" style={{ minHeight: '100vh', overflow: 'auto' }}>
+    <div className="dark-container" style={{minHeight: '100vh', overflow: 'auto' }}>
       <NavBar />
       <div className="post-content" style={{ 
         padding: '120px 20px 40px', // increased from 100px to 120px
@@ -83,11 +84,11 @@ function AddAchievements() {
           <form onSubmit={handleSubmit} className="dark-form">
             <div className="media-grid">
               {imagePreview && (
-                <div className="media-preview" style={{ position: 'relative', height: '150px', width: '350px' }}>
+                <div className="media-preview" style={{position: 'relative', height: '150px', width: '350px' }}>
                   <img 
                     src={imagePreview} 
                     alt="Preview" 
-                    style={{ height: '150px', width: '350px', objectFit: 'cover' }}
+                    style={{height: '150px', width: '350px', objectFit: 'cover' }}
                   />
                 </div>
               )}
@@ -151,7 +152,7 @@ function AddAchievements() {
               className="dark-input"
               style={{ colorScheme: 'dark' }}
             />
-
+            
             <button type="submit" className="submit-button">
               Add Achievement
             </button>
