@@ -141,15 +141,15 @@ function UpdatePost() {
   return (
     <div className="dark-container" style={{ height: '100vh', overflow: 'hidden' }}>
       <NavBar />
-      <div className="post-content" style={{ 
-        marginTop: '60px', 
-        height: 'calc(100vh - 60px)', 
+      <div className="post-content" style={{
+        marginTop: '60px',
+        height: 'calc(100vh - 60px)',
         overflowY: 'auto',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-        <div className="post-card" style={{ 
+        <div className="post-card" style={{
           width: '80%',
           maxWidth: '800px'
         }}>
@@ -191,7 +191,7 @@ function UpdatePost() {
 
             <div className="media-grid">
               {existingMedia.map((mediaUrl, index) => (
-                <div key={index} className="media-preview" style={{ 
+                <div key={index} className="media-preview" style={{
                   position: 'relative',
                   width: '350px',
                   height: '150px'
@@ -202,13 +202,13 @@ function UpdatePost() {
                       Your browser does not support the video tag.
                     </video>
                   ) : (
-                    <img 
-                      src={`http://localhost:8080${mediaUrl}`} 
-                      alt={`Media ${index}`} 
+                    <img
+                      src={`http://localhost:8080${mediaUrl}`}
+                      alt={`Media ${index}`}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   )}
-                  <button 
+                  <button
                     className="close-modal-btn"
                     onClick={(e) => {
                       e.preventDefault();
