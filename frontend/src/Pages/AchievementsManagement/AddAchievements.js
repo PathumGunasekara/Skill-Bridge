@@ -11,6 +11,7 @@ function AddAchievements() {
     category: '',
     postOwnerName: '',
   });
+
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
@@ -52,7 +53,6 @@ function AddAchievements() {
       });
       imageUrl = await uploadResponse.text();
     }
-
      const response = await fetch('http://localhost:8080/achievements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -62,7 +62,7 @@ function AddAchievements() {
       alert('Achievements added successfully!');
       window.location.href = '/myAchievements';
     } else {
-      alert('Failed to add Achievements.');
+      alert('Failed add achievements.');
     }
   };
 
@@ -70,12 +70,14 @@ function AddAchievements() {
     <div className="dark-container" style={{minHeight: '100vh', overflow: 'auto' }}>
       <NavBar />
       <div className="post-content" style={{ 
+        //padding: '100px 20px 30px',
         padding: '120px 20px 40px', // increased from 100px to 120px
         minHeight: 'calc(100vh - 60px)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'flex-start'
       }}>
+
         <div className="post-card" style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Add Achievement</h1>
           <p className="subtitle">Share your accomplishments with the community</p>
@@ -151,6 +153,7 @@ function AddAchievements() {
               className="dark-input"
               style={{ colorScheme: 'dark' }}
             />
+            
             <button type="submit" className="submit-button">
               Add Achievement
             </button>

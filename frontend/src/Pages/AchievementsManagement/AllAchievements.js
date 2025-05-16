@@ -33,6 +33,7 @@ function AllAchievements() {
     setFilteredData(filtered);
   };
 
+  //const handleDelete = async (id) =>
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this Achievements?')) {
       try {
@@ -138,6 +139,7 @@ function AllAchievements() {
                         </div>
                       )}
                     </div>
+
                   </div>
                 ))}
               </div>
