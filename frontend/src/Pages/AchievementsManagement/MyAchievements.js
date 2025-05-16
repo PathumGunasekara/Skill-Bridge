@@ -16,6 +16,7 @@ function MyAchievements() {
       .then((data) => {
         const userFilteredData = data.filter((achievement) => achievement.postOwnerID === userId); // Filter added
         setProgressData(userFilteredData);
+        //setFilteredData(userFilteredData); 
         setFilteredData(userFilteredData); // Initially show filtered data
       })
       .catch((error) => console.error('Error fetching Achievements data:', error));
