@@ -121,6 +121,7 @@ function AllPost() {
     setShowMyPosts(!showMyPosts); // Toggle the state
   };
 
+  //Process of the handleLike
   const handleLike = async (postId) => {
     const userID = localStorage.getItem('userID');
     if (!userID) {
