@@ -12,6 +12,8 @@ function AddAchievements() {
     postOwnerName: '',
   });
 
+  //const [image, setImage] = useState();
+  
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
