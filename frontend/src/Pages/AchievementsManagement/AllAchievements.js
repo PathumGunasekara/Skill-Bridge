@@ -33,6 +33,7 @@ function AllAchievements() {
     setFilteredData(filtered);
   };
 
+  //const handleDelete = async (id) =>
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this Achievements?')) {
       try {
@@ -131,12 +132,14 @@ function AllAchievements() {
                           <div className='media-preview'>
                             <img 
                               src={`http://localhost:8080/achievements/images/${achievement.imageUrl}`} 
+                              
                               alt="Achievement" 
                             />
                           </div>
                         </div>
                       )}
                     </div>
+
                   </div>
                 ))}
               </div>
