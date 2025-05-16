@@ -11,6 +11,7 @@ function AddAchievements() {
     category: '',
     postOwnerName: '',
   });
+
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
@@ -52,7 +53,6 @@ function AddAchievements() {
       });
       imageUrl = await uploadResponse.text();
     }
-
      const response = await fetch('http://localhost:8080/achievements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -76,6 +76,7 @@ function AddAchievements() {
         justifyContent: 'center',
         alignItems: 'flex-start'
       }}>
+
         <div className="post-card" style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Add Achievement</h1>
           <p className="subtitle">Share your accomplishments with the community</p>
@@ -151,6 +152,7 @@ function AddAchievements() {
               className="dark-input"
               style={{ colorScheme: 'dark' }}
             />
+            
             <button type="submit" className="submit-button">
               Add Achievement
             </button>
