@@ -14,7 +14,7 @@ function MyAchievements() {
     fetch('http://localhost:8080/achievements')
       .then((response) => response.json())
       .then((data) => {
-        const userFilteredData = data.filter((achievement) => achievement.postOwnerID === userId);
+        const userFilteredData = data.filter((achievement) => achievement.postOwnerID === userId);  // Filter added
         setProgressData(userFilteredData);
         //setFilteredData(userFilteredData); 
         setFilteredData(userFilteredData); // Initially show filtered data
