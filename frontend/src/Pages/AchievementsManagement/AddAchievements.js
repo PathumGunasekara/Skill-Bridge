@@ -62,7 +62,7 @@ function AddAchievements() {
       alert('Achievements added successfully!');
       window.location.href = '/myAchievements';
     } else {
-      alert('Failed to add Achievements.');
+      alert('Failed add achievements.');
     }
   };
 
@@ -70,6 +70,7 @@ function AddAchievements() {
     <div className="dark-container" style={{minHeight: '100vh', overflow: 'auto' }}>
       <NavBar />
       <div className="post-content" style={{ 
+        //padding: '100px 20px 30px',
         padding: '120px 20px 40px', // increased from 100px to 120px
         minHeight: 'calc(100vh - 60px)',
         display: 'flex',
