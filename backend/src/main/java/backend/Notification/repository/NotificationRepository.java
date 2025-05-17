@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface NotificationRepository extends MongoRepository<NotificationModel, String> {
-    List<NotificationModel> findByUserId(String userId);
-    void deleteByUserId(String userId);
+    List<NotificationModel> findByUserId(String userId); //get all notifications for a user
+    void deleteByUserId(String userId); //delete all notifications for a user
 }
