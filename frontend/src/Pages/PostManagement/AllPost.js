@@ -243,7 +243,8 @@ function AllPost() {
         content,
       });
 
-      // Update the comment in state
+      // updating the comment in state
+      // update the specific post's comments in the state
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
           post.id === postId
