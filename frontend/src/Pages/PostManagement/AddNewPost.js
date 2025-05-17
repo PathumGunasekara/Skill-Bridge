@@ -88,9 +88,9 @@ function AddNewPost() {
   return (
     <div className="dark-container" style={{ height: '100vh', overflow: 'hidden' }}>
       <NavBar />
-      <div className="post-content" style={{ 
-        marginTop: '60px', 
-        height: 'calc(100vh - 60px)', 
+      <div className="post-content" style={{
+        marginTop: '60px',
+        height: 'calc(100vh - 60px)',
         overflowY: 'auto',
         display: 'flex',
         justifyContent: 'center',
@@ -141,9 +141,9 @@ function AddNewPost() {
                       <source src={preview.url} type={preview.type} />
                     </video>
                   ) : (
-                    <img 
-                      src={preview.url} 
-                      alt={`Preview ${index}`} 
+                    <img
+                      src={preview.url}
+                      alt={`Preview ${index}`}
                       style={{ height: '150px', width: '350px', objectFit: 'cover' }}
                     />
                   )}
