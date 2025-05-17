@@ -121,6 +121,7 @@ function AllPost() {
     setShowMyPosts(!showMyPosts); // Toggle the state
   };
 
+  //Process of the handleLike
   const handleLike = async (postId) => {
     const userID = localStorage.getItem('userID');
     if (!userID) {
@@ -132,7 +133,7 @@ function AllPost() {
         params: { userID },
       });
 
-      // Update the specific post's likes in the state
+      // update specific  post's likes in the state 
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
           post.id === postId ? { ...post, likes: response.data.likes } : post
@@ -242,7 +243,8 @@ function AllPost() {
         content,
       });
 
-      // Update the comment in state
+      // updating the comment in state
+      // update the specific post's comments in the state
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
           post.id === postId
