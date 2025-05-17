@@ -23,11 +23,12 @@ public class NotificationController {
     @Autowired
     private NotificationRepository notificationRepository;
 
+    // get all notification for user with id
     @GetMapping("/{userId}")
     public List<NotificationModel> getNotifications(@PathVariable String userId) {
         return notificationRepository.findByUserId(userId);
     }
-
+    // mark notification as read
     @PutMapping("/{id}/markAsRead")
     public ResponseEntity<?> markAsRead(@PathVariable String id) {
         return notificationRepository.findById(id).map(notification -> {
@@ -37,7 +38,7 @@ public class NotificationController {
             return ResponseEntity.ok("Notification marked as read");
         }).orElse(ResponseEntity.notFound().build());
     }
-
+    // delete all notifications for user with id
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteNotification(@PathVariable String id) {
         if (notificationRepository.existsById(id)) {
