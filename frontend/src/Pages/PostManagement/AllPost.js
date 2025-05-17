@@ -315,32 +315,32 @@ function AllPost() {
               />
               <i className="search-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                 </svg>
               </i>
             </div>
             <div className="search-actions">
-              <button 
-                className={`view-toggle-btn ${!showMyPosts ? 'active' : ''}`} 
+              <button
+                className={`view-toggle-btn ${!showMyPosts ? 'active' : ''}`}
                 onClick={handleMyPostsToggle}
               >
                 {showMyPosts ? 'View All Posts' : 'View My Posts'}
               </button>
-              <button 
-                className="create-new-btn" 
+              <button
+                className="create-new-btn"
                 onClick={() => (window.location.href = '/addNewPost')}
               >
                 <span>+</span> Create Post
               </button>
             </div>
           </div>
-          
+
           <div className='posts-container modern'>
             {filteredPosts.length === 0 ? (
               <div className='empty-state-box modern'>
                 <div className='empty-icon'>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 3h-3v3h3V6zm0 4h-3v3h3v-3zm-4-4h-3v3h3V6zm0 4h-3v3h3v-3zm-4-4H6v3h3V6zm0 4H6v3h3v-3zm10 4H6v3h13v-3z"/>
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 3h-3v3h3V6zm0 4h-3v3h3v-3zm-4-4h-3v3h3V6zm0 4h-3v3h3v-3zm-4-4H6v3h3V6zm0 4H6v3h3v-3zm10 4H6v3h13v-3z" />
                   </svg>
                 </div>
                 <h2>No Posts Found</h2>
@@ -419,7 +419,7 @@ function AllPost() {
 
                     <div className='post-footer'>
                       <div className='engagement'>
-                        <button 
+                        <button
                           className={`like-btn ${post.likes?.[localStorage.getItem('userID')] ? 'active' : ''}`}
                           onClick={() => handleLike(post.id)}
                         >
@@ -455,7 +455,7 @@ function AllPost() {
                                     {comment.userID === loggedInUserID && (
                                       editingComment.id === comment.id ? (
                                         <>
-                                          <button className='icon-btn' onClick={() => 
+                                          <button className='icon-btn' onClick={() =>
                                             handleSaveComment(post.id, comment.id, editingComment.content)}>
                                             <FiSave />
                                           </button>
@@ -464,13 +464,13 @@ function AllPost() {
                                           </button>
                                         </>
                                       ) : (
-                                        <button className='icon-btn' onClick={() => 
-                                          setEditingComment({id: comment.id, content: comment.content})}>
+                                        <button className='icon-btn' onClick={() =>
+                                          setEditingComment({ id: comment.id, content: comment.content })}>
                                           <GrUpdate />
                                         </button>
                                       )
                                     )}
-                                    <button className='icon-btn' onClick={() => 
+                                    <button className='icon-btn' onClick={() =>
                                       handleDeleteComment(post.id, comment.id)}>
                                       <MdDelete />
                                     </button>
