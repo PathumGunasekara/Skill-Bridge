@@ -115,11 +115,11 @@ function UpdateAchievements() {
           <form onSubmit={handleSubmit} className="dark-form">
             <div className="media-grid">
               {previewImage && (
-                <div className="media-preview" style={{ position: 'relative', height: '100px', width: '300px' }}>
+                <div className="media-preview" style={{ position: 'relative', height: '150px', width: '350px' }}>
                   <img 
                     src={previewImage} 
                     alt="Preview" 
-                    style={{ height: '100px', width: '300px', objectFit: 'cover' }}
+                    style={{ height: '150px', width: '350px', objectFit: 'cover' }}
                   />
                 </div>
               )}
