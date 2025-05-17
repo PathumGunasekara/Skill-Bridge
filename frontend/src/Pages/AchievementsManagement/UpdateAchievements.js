@@ -58,7 +58,7 @@ function UpdateAchievements() {
       let imageUrl = formData.imageUrl;
      
       
-       
+      // Upload new image if selected
       if (selectedFile) {
         const uploadFormData = new FormData();
         uploadFormData.append('file', selectedFile);
@@ -107,6 +107,7 @@ function UpdateAchievements() {
         justifyContent: 'center',
         alignItems: 'flex-start'
       }}>
+        
         <div className="post-card" style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Update Achievement</h1>
           <p className="subtitle">Update your accomplishment details</p>
@@ -114,11 +115,11 @@ function UpdateAchievements() {
           <form onSubmit={handleSubmit} className="dark-form">
             <div className="media-grid">
               {previewImage && (
-                <div className="media-preview" style={{ position: 'relative', height: '150px', width: '350px' }}>
+                <div className="media-preview" style={{ position: 'relative', height: '100px', width: '300px' }}>
                   <img 
                     src={previewImage} 
                     alt="Preview" 
-                    style={{ height: '150px', width: '350px', objectFit: 'cover' }}
+                    style={{ height: '100px', width: '300px', objectFit: 'cover' }}
                   />
                 </div>
               )}
@@ -133,7 +134,8 @@ function UpdateAchievements() {
                 className="file-input"
               />
               <label htmlFor="file-input" className="upload-label">
-                Choose New Achievement Image
+                
+                Choose achievement image
               </label>
             </div>
 
@@ -193,3 +195,4 @@ function UpdateAchievements() {
 }
 
 export default UpdateAchievements;
+//export default Updateachievements;
