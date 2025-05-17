@@ -56,8 +56,9 @@ function UpdateAchievements() {
 
     try {
       let imageUrl = formData.imageUrl;
+     
       
-      // Upload new image if selected
+       
       if (selectedFile) {
         const uploadFormData = new FormData();
         uploadFormData.append('file', selectedFile);
@@ -66,12 +67,13 @@ function UpdateAchievements() {
           method: 'POST',
           body: uploadFormData,
         });
-        
         if (!uploadResponse.ok) {
           throw new Error('Image upload failed');
         }
         imageUrl = await uploadResponse.text();
       }
+
+
 
       // Update achievement data
       const updatedData = { ...formData, imageUrl };
