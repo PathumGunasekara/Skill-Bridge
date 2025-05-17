@@ -1,3 +1,5 @@
+//notification management page
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './notification.css'
@@ -36,6 +38,7 @@ function NotificationsPage() {
     }
   };
 
+  // Function to delete a notification
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8080/notifications/${id}`);
