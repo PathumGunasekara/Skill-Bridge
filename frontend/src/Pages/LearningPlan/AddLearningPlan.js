@@ -154,7 +154,7 @@ function AddLearningPlan() {
         <div className="template-preview-container">
           {/* Template 1 */}
           <div className="template template-1">
-            <p className='template_id_one'>template 1</p>
+            <p className='template_id_one'>NORMAL</p>
             <p className='template_title'>{title || "Title Preview"}</p>
             <p className='template_dates'><HiCalendarDateRange /> {startDate} to {endDate} </p>
             <p className='template_description'>{category}</p>
@@ -178,7 +178,7 @@ function AddLearningPlan() {
           </div>
           {/* Template 2 */}
           <div className="template template-2">
-            <p className='template_id_one'>template 2</p>
+            <p className='template_id_one'>IMPORTANT</p>
             <p className='template_title'>{title || "Title Preview"}</p>
             <p className='template_dates'><HiCalendarDateRange /> {startDate} to {endDate} </p>
             <p className='template_description'>{category}</p>
@@ -208,7 +208,7 @@ function AddLearningPlan() {
           </div>
           {/* Template 3 */}
           <div className="template template-3">
-            <p className='template_id_one'>template 3</p>
+            <p className='template_id_one'>NOT IMPORTANT</p>
             {imagePreview && <img src={imagePreview} alt="Preview" className="iframe_preview" />}
             {contentURL && (
               <iframe
