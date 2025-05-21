@@ -96,9 +96,6 @@ We welcome contributions! Please follow these steps:
 ## 📄 License
 This project is licensed under the MIT License.
 
-## 📧 Contact
-For questions or support, please email: support@skillshareplatform.com
-
 ---
 
 Happy skill sharing! 🎉
